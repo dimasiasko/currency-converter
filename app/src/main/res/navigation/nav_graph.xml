@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SelectCurrency">
+
+    <fragment
+        android:id="@+id/SelectCurrency"
+        android:name="com.example.currencyconverter.SelectCurrencyFragment"
+        android:label="Select currency"
+        tools:layout="@layout/select_currency_fragment">
+
+        <action
+            android:id="@+id/action_SelectCurrencyFragment_to_ResultsFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.currencyconverter.ResultsFragment"
+        android:label="Results"
+        tools:layout="@layout/results_fragment">
+
+        <action
+            android:id="@+id/action_ResultsFragment_to_SelectCurrencyFragment"
+            app:destination="@id/SelectCurrency" />
+    </fragment>
+</navigation>
